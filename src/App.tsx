@@ -189,6 +189,19 @@ const PARTNER_PLACEHOLDERS = [
   "Academic Centers",
 ];
 
+const HERO_CAPTURE_ASSET = {
+  nid: "bafybeifksqe7orsgtfnly5j3okltqi3iyt3k2pptnlfyre62jpfzxftsju",
+  imageUrl:
+    "https://ipfs-pin.numbersprotocol.io/ipfs/bafybeifksqe7orsgtfnly5j3okltqi3iyt3k2pptnlfyre62jpfzxftsju",
+  assetUrl:
+    "https://asset.captureapp.xyz/bafybeifksqe7orsgtfnly5j3okltqi3iyt3k2pptnlfyre62jpfzxftsju",
+  actionButtonUrl:
+    "https://dashboard.captureapp.xyz/showcase/bafybeifksqe7orsgtfnly5j3okltqi3iyt3k2pptnlfyre62jpfzxftsju",
+  engagementImage:
+    "https://static-cdn.numbersprotocol.io/capture-eye/capture-ad.png",
+  engagementLink: "https://captureapp.xyz",
+};
+
 const fadeUp = {
   initial: { opacity: 0, y: 14 },
   whileInView: { opacity: 1, y: 0 },
@@ -303,10 +316,7 @@ function NavBar({
         </div>
 
         <div className="flex items-center gap-2">
-          <Button
-            onClick={onApply}
-            className="rounded-none bg-white text-black hover:bg-white/90"
-          >
+          <Button onClick={onApply} variant="inverse" className="rounded-none">
             Apply to Join
           </Button>
         </div>
@@ -416,10 +426,7 @@ function Hero({ onApply }: { onApply: () => void }) {
           </div>
 
           <div className="mt-8 flex flex-wrap items-center gap-3">
-            <Button
-              onClick={onApply}
-              className="rounded-none bg-white text-black hover:bg-white/90"
-            >
+            <Button onClick={onApply} variant="inverse" className="rounded-none">
               Apply to Join
             </Button>
             <Badge
@@ -437,14 +444,28 @@ function Hero({ onApply }: { onApply: () => void }) {
           className="relative"
         >
           <div className="aspect-[4/3] w-full overflow-hidden rounded-none border border-white/10 bg-white/5">
-            <img
-              src="https://images.unsplash.com/photo-1526481280690-7bdb25d39c42?q=80&w=1200&auto=format&fit=crop"
-              alt="Creative community"
-              className="h-full w-full object-cover opacity-90"
-            />
+            <capture-eye
+              className="block"
+              nid={HERO_CAPTURE_ASSET.nid}
+              position="bottom right"
+              visibility="always"
+              layout="curated"
+              cz-title="Produced for"
+              heading-source="abstract"
+              action-button-text="View provenance"
+              action-button-link={HERO_CAPTURE_ASSET.actionButtonUrl}
+              eng-img={HERO_CAPTURE_ASSET.engagementImage}
+              eng-link={HERO_CAPTURE_ASSET.engagementLink}
+            >
+              <img
+                src={HERO_CAPTURE_ASSET.imageUrl}
+                alt="Creative community"
+                className="h-full w-full object-cover opacity-90"
+              />
+            </capture-eye>
           </div>
-          <div className="mt-3 text-xs text-white/50">
-            Replace with your hero image.
+          <div className="mt-3 text-xs text-white/60">
+            Provenance powered by Capture Eye.
           </div>
         </motion.div>
       </div>
