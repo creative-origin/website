@@ -1,6 +1,8 @@
 import React, { useEffect, useMemo, useState } from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
+import logoSideWhite from "@/assets/logo-side-white.png";
+import logoSideBlack from "@/assets/logo-side-black.jpg";
 import {
   Card,
   CardContent,
@@ -249,24 +251,18 @@ function useHashRoute() {
 // ------------------------------
 
 function LogoMark({ dark = false }: { dark?: boolean }) {
+  const dropShadow = dark ? "drop-shadow-sm" : "drop-shadow";
+  const logoSrc = dark ? logoSideBlack : logoSideWhite;
   return (
     <div className="flex items-center gap-3">
-      <span
-        className={`inline-flex h-8 w-8 items-center justify-center rounded-full ${
-          dark ? "bg-black" : "bg-white/90"
-        }`}
-      >
-        <span
-          className={`h-3.5 w-3.5 rounded-full ${dark ? "bg-white" : "bg-black"}`}
-        />
-      </span>
-      <span
-        className={`text-lg font-semibold tracking-tight ${
-          dark ? "text-black" : "text-white"
-        }`}
-      >
-        {BRAND.name}
-      </span>
+      <img
+        src={logoSrc}
+        alt={`${BRAND.name} logo`}
+        className={`h-10 w-auto select-none ${dropShadow}`}
+        loading="lazy"
+        draggable={false}
+      />
+      <span className="sr-only">{BRAND.name}</span>
     </div>
   );
 }
@@ -288,7 +284,7 @@ function NavBar({
   ];
 
   return (
-    <div className="sticky top-0 z-50 border-b border-white/10 bg-black/90 backdrop-blur">
+    <div className="sticky top-0 z-50 border-b border-black bg-black">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4 md:px-6">
         <button
           onClick={() => onNavigate("home")}
@@ -429,12 +425,6 @@ function Hero({ onApply }: { onApply: () => void }) {
             <Button onClick={onApply} variant="inverse" className="rounded-none">
               Apply to Join
             </Button>
-            <Badge
-              variant="outline"
-              className="rounded-none border-white/30 text-white/80"
-            >
-              Alliance for creators + AI ethics
-            </Badge>
           </div>
         </motion.div>
 
