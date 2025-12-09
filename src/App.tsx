@@ -9,6 +9,19 @@ import pyroimage from "@/assets/pyroimage.webp";
 import creatorPlaybook from "@/assets/creator-playbook.webp";
 import twoDayConference from "@/assets/Two-day-conference.webp";
 import creativeEconomy from "@/assets/creative-economy.webp";
+import allfeatLogo from "@/assets/allfeat.png";
+import clickLogo from "@/assets/click.png";
+import dacsLogo from "@/assets/dacs.png";
+import defianceMediaLogo from "@/assets/defiance-media.png";
+import gitdataAiLogo from "@/assets/gitdata-ai.png";
+import instillAiLogo from "@/assets/instill-ai.png";
+import itheumProtocolLogo from "@/assets/itheum-protocol.png";
+import likecoinLogo from "@/assets/likecoin.png";
+import mattersLabLogo from "@/assets/matters-lab.png";
+import numbersProtocolLogo from "@/assets/numbers-protocol.png";
+import orangeLogo from "@/assets/orange.png";
+import pyroImageLogo from "@/assets/pyro-image.png";
+import vaisualLogo from "@/assets/vaisual.png";
 import {
   Card,
   CardContent,
@@ -196,68 +209,68 @@ const PURPOSE = [
 const PARTNERS = [
   {
     name: "Allfeat",
-    logo: "https://via.placeholder.com/120x60/000000/FFFFFF?text=Allfeat",
-    url: "#",
+    logo: allfeatLogo,
+    url: "https://www.allfeat.com/",
   },
   {
     name: "Click Camera",
-    logo: "https://via.placeholder.com/120x60/000000/FFFFFF?text=Click+Camera",
-    url: "#",
+    logo: clickLogo,
+    url: "https://clickapp.com/",
   },
   {
     name: "DACS",
-    logo: "https://via.placeholder.com/120x60/000000/FFFFFF?text=DACS",
-    url: "#",
+    logo: dacsLogo,
+    url: "https://www.dacs.org.uk/",
   },
   {
-    name: "DeFlance Media",
-    logo: "https://via.placeholder.com/120x60/000000/FFFFFF?text=DeFlance",
-    url: "#",
-  },
-  {
-    name: "Numbers Protocol",
-    logo: "https://via.placeholder.com/120x60/000000/FFFFFF?text=Numbers",
-    url: "#",
+    name: "Defiance Media",
+    logo: defianceMediaLogo,
+    url: "https://defiance.media/",
   },
   {
     name: "GitData.AI",
-    logo: "https://via.placeholder.com/120x60/000000/FFFFFF?text=GitData.AI",
-    url: "#",
+    logo: gitdataAiLogo,
+    url: "https://gitdata.ai/",
   },
   {
     name: "Instill AI",
-    logo: "https://via.placeholder.com/120x60/000000/FFFFFF?text=Instill+AI",
-    url: "#",
+    logo: instillAiLogo,
+    url: "https://www.instill-ai.com/",
   },
   {
     name: "ITHEUM Protocol",
-    logo: "https://via.placeholder.com/120x60/000000/FFFFFF?text=ITHEUM",
-    url: "#",
+    logo: itheumProtocolLogo,
+    url: "https://itheum.io/",
   },
   {
     name: "LikeCoin",
-    logo: "https://via.placeholder.com/120x60/000000/FFFFFF?text=LikeCoin",
-    url: "#",
+    logo: likecoinLogo,
+    url: "https://like.co/",
   },
   {
     name: "Matters Lab",
-    logo: "https://via.placeholder.com/120x60/000000/FFFFFF?text=Matters+Lab",
-    url: "#",
+    logo: mattersLabLogo,
+    url: "https://matters-lab.io/",
   },
   {
-    name: "Pyro Image",
-    logo: "https://via.placeholder.com/120x60/000000/FFFFFF?text=Pyro+Image",
-    url: "#",
+    name: "Numbers Protocol",
+    logo: numbersProtocolLogo,
+    url: "https://numbersprotocol.io/",
   },
   {
     name: "Orange Web3",
-    logo: "https://via.placeholder.com/120x60/000000/FFFFFF?text=Orange+Web3",
-    url: "#",
+    logo: orangeLogo,
+    url: "https://orangeweb3.com/",
   },
   {
-    name: "vAIsual",
-    logo: "https://via.placeholder.com/120x60/000000/FFFFFF?text=vAIsual",
-    url: "#",
+    name: "Pyro Image",
+    logo: pyroImageLogo,
+    url: "https://pyroimage.com/",
+  },
+  {
+    name: "Vaisual",
+    logo: vaisualLogo,
+    url: "https://www.vaisual.com/",
   },
 ];
 
