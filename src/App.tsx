@@ -190,13 +190,13 @@ const PARTNER_PLACEHOLDERS = [
 ];
 
 const HERO_CAPTURE_ASSET = {
-  nid: "bafybeifksqe7orsgtfnly5j3okltqi3iyt3k2pptnlfyre62jpfzxftsju",
+  nid: "bafybeib63x3bcpzq6p2wclcbz2uzocfy4gkrdarvcufc6gnouylaqrk34a",
   imageUrl:
-    "https://ipfs-pin.numbersprotocol.io/ipfs/bafybeifksqe7orsgtfnly5j3okltqi3iyt3k2pptnlfyre62jpfzxftsju",
+    "https://ipfs-pin.numbersprotocol.io/ipfs/bafybeib63x3bcpzq6p2wclcbz2uzocfy4gkrdarvcufc6gnouylaqrk34a",
   assetUrl:
-    "https://asset.captureapp.xyz/bafybeifksqe7orsgtfnly5j3okltqi3iyt3k2pptnlfyre62jpfzxftsju",
+    "https://asset.captureapp.xyz/bafybeib63x3bcpzq6p2wclcbz2uzocfy4gkrdarvcufc6gnouylaqrk34a",
   actionButtonUrl:
-    "https://dashboard.captureapp.xyz/showcase/bafybeifksqe7orsgtfnly5j3okltqi3iyt3k2pptnlfyre62jpfzxftsju",
+    "https://dashboard.captureapp.xyz/showcase/bafybeib63x3bcpzq6p2wclcbz2uzocfy4gkrdarvcufc6gnouylaqrk34a",
   engagementImage:
     "https://static-cdn.numbersprotocol.io/capture-eye/capture-ad.png",
   engagementLink: "https://captureapp.xyz",
@@ -447,8 +447,8 @@ function Hero({ onApply }: { onApply: () => void }) {
             <capture-eye
               className="block"
               nid={HERO_CAPTURE_ASSET.nid}
-              position="bottom right"
-              visibility="always"
+              position="top left"
+              visibility="hover"
               layout="curated"
               cz-title="Produced for"
               heading-source="abstract"
