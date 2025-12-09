@@ -11,4 +11,4 @@ This is a multi-page (hash-routed) marketing site:
 Open `vite.config.ts` and replace:
 
 ```ts
-const repoName = "REPLACE_WITH_YOUR_REPO_NAME";
+const repoName = "creative-origin-website";
