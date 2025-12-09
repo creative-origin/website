@@ -47,6 +47,7 @@ const NEWS = [
     excerpt:
       "Governments are racing to create ethical frameworks for AI. For CIOs and especially those in AI companies, the speed of change can feel like uncertainty at scale.",
     tag: "Regulation",
+    link: "https://www.informationweek.com/data-management/how-can-cios-prepare-for-ai-data-regulation-changes-",
   },
   {
     date: "Sep 9, 2024",
@@ -55,6 +56,7 @@ const NEWS = [
     excerpt:
       "An open letter to the culture secretary proposes new mechanisms to support creative workers and champion fair conditions in an AI-shaped economy.",
     tag: "UK Policy",
+    link: "https://www.theguardian.com/culture/article/2024/sep/08/levy-smartphones-creatives-ai-threat-uk-artists-labour",
   },
   {
     date: "May 24, 2019",
@@ -63,6 +65,7 @@ const NEWS = [
     excerpt:
       "A bipartisan proposal aimed at protecting journalists and artists from unauthorized AI use of their work and preserving origin information.",
     tag: "Legislation",
+    link: "https://www.theverge.com/2024/7/11/24196769/copied-act-cantwell-blackburn-heinrich-ai-journalists-artists",
   },
   {
     date: "May 24, 2019",
@@ -70,6 +73,7 @@ const NEWS = [
     excerpt:
       "Support for transparency-focused policy that would require watermarking of AI-generated content.",
     tag: "US Policy",
+    link: "https://www.siliconrepublic.com/machines/openai-california-bill-ab-3211-ai-content-watermarking",
   },
   {
     date: "May 24, 2019",
@@ -78,6 +82,7 @@ const NEWS = [
     excerpt:
       "The creative industries continue to search for practical, collective responses as AI tools reshape ownership, value, and livelihoods.",
     tag: "Ecosystem",
+    link: "https://www.theverge.com/2024/7/11/24196769/copied-act-cantwell-blackburn-heinrich-ai-journalists-artists",
   },
 ];
 
@@ -182,13 +187,72 @@ const PURPOSE = [
   },
 ];
 
-const PARTNER_PLACEHOLDERS = [
-  "Cultural Orgs",
-  "Creator Unions",
-  "Tech Labs",
-  "Policy Groups",
-  "Newsrooms",
-  "Academic Centers",
+const PARTNERS = [
+  {
+    name: "Allfeat",
+    logo: "https://via.placeholder.com/120x60/000000/FFFFFF?text=Allfeat",
+    url: "#",
+  },
+  {
+    name: "Click Camera",
+    logo: "https://via.placeholder.com/120x60/000000/FFFFFF?text=Click+Camera",
+    url: "#",
+  },
+  {
+    name: "DACS",
+    logo: "https://via.placeholder.com/120x60/000000/FFFFFF?text=DACS",
+    url: "#",
+  },
+  {
+    name: "DeFlance Media",
+    logo: "https://via.placeholder.com/120x60/000000/FFFFFF?text=DeFlance",
+    url: "#",
+  },
+  {
+    name: "Numbers Protocol",
+    logo: "https://via.placeholder.com/120x60/000000/FFFFFF?text=Numbers",
+    url: "#",
+  },
+  {
+    name: "GitData.AI",
+    logo: "https://via.placeholder.com/120x60/000000/FFFFFF?text=GitData.AI",
+    url: "#",
+  },
+  {
+    name: "Instill AI",
+    logo: "https://via.placeholder.com/120x60/000000/FFFFFF?text=Instill+AI",
+    url: "#",
+  },
+  {
+    name: "ITHEUM Protocol",
+    logo: "https://via.placeholder.com/120x60/000000/FFFFFF?text=ITHEUM",
+    url: "#",
+  },
+  {
+    name: "LikeCoin",
+    logo: "https://via.placeholder.com/120x60/000000/FFFFFF?text=LikeCoin",
+    url: "#",
+  },
+  {
+    name: "Matters Lab",
+    logo: "https://via.placeholder.com/120x60/000000/FFFFFF?text=Matters+Lab",
+    url: "#",
+  },
+  {
+    name: "Pyro Image",
+    logo: "https://via.placeholder.com/120x60/000000/FFFFFF?text=Pyro+Image",
+    url: "#",
+  },
+  {
+    name: "Orange Web3",
+    logo: "https://via.placeholder.com/120x60/000000/FFFFFF?text=Orange+Web3",
+    url: "#",
+  },
+  {
+    name: "vAIsual",
+    logo: "https://via.placeholder.com/120x60/000000/FFFFFF?text=vAIsual",
+    url: "#",
+  },
 ];
 
 const HERO_CAPTURE_NID = "bafybeib63x3bcpzq6p2wclcbz2uzocfy4gkrdarvcufc6gnouylaqrk34a";
@@ -367,9 +431,14 @@ function NavBar({
         </div>
 
         <div className="flex items-center gap-2">
-          <Button onClick={onApply} variant="inverse" className="rounded-none">
+          <a
+            href="https://github.com/creative-origin"
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center justify-center rounded-none bg-white px-4 py-2 text-sm text-black shadow-[0_0_0_1px_rgba(255,255,255,0.3)] transition hover:bg-white/90 focus:outline-none"
+          >
             Apply to Join
-          </Button>
+          </a>
         </div>
       </div>
     </div>
@@ -477,9 +546,14 @@ function Hero({ onApply }: { onApply: () => void }) {
           </div>
 
           <div className="mt-8 flex flex-wrap items-center gap-3">
-            <Button onClick={onApply} variant="inverse" className="rounded-none">
+            <a
+              href="https://github.com/creative-origin"
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center justify-center rounded-none bg-white px-4 py-2 text-sm text-black shadow-[0_0_0_1px_rgba(255,255,255,0.3)] transition hover:bg-white/90 focus:outline-none"
+            >
               Apply to Join
-            </Button>
+            </a>
           </div>
         </motion.div>
 
@@ -604,7 +678,9 @@ function NewsPreview({ onNavigate }: { onNavigate: (r: Route) => void }) {
                     {n.excerpt}
                   </CardDescription>
                   <a
-                    href="#"
+                    href={n.link}
+                    target="_blank"
+                    rel="noreferrer"
                     className="inline-flex items-center gap-1 text-sm text-black underline-offset-4 hover:underline"
                   >
                     Read More <ArrowRight className="h-3.5 w-3.5" />
@@ -664,12 +740,14 @@ function SlimJoinBar({ onApply }: { onApply: () => void }) {
               Guidelines
             </Badge>
           </div>
-          <Button
-            onClick={onApply}
-            className="rounded-none bg-black px-7 text-white hover:bg-black/90"
+          <a
+            href="https://github.com/creative-origin"
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center justify-center rounded-none bg-black px-7 py-2 text-sm text-white transition hover:bg-black/90 focus:outline-none"
           >
             Apply to Join
-          </Button>
+          </a>
         </div>
       </div>
     </section>
@@ -736,7 +814,9 @@ function NewsPage() {
                     {n.excerpt}
                   </CardDescription>
                   <a
-                    href="#"
+                    href={n.link}
+                    target="_blank"
+                    rel="noreferrer"
                     className="inline-flex items-center gap-1 text-sm text-black underline-offset-4 hover:underline"
                   >
                     Read More <ArrowRight className="h-3.5 w-3.5" />
@@ -841,40 +921,55 @@ function PartnersPage() {
         <PageHeader
           title="Partners"
           subtitle="We collaborate with cultural institutions, creator communities, technology builders, and policy networks to co-design practical standards and real-world pilots."
-          right={
-            <Badge variant="secondary" className="w-fit rounded-none">
-              Alliance Network
-            </Badge>
-          }
         />
 
-        <div className="mt-10 grid gap-4 sm:grid-cols-2 md:grid-cols-3">
-          {PARTNER_PLACEHOLDERS.map((p, i) => (
-            <motion.div
-              key={p}
-              {...fadeUp}
-              transition={{ ...fadeUp.transition, delay: 0.03 * i }}
-              className="border border-black/10 p-6"
-            >
-              <div className="text-sm font-medium text-black">{p}</div>
-              <div className="mt-2 text-xs text-black/50">
-                Replace with logos + short partner blurbs.
-              </div>
-            </motion.div>
-          ))}
+        <div className="mt-12">
+          <h2 className="text-2xl font-semibold tracking-tight text-black">
+            Creative Origin Members
+          </h2>
+          <div className="mt-8 grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+            {PARTNERS.map((partner, i) => (
+              <motion.a
+                key={partner.name}
+                href={partner.url}
+                target="_blank"
+                rel="noreferrer"
+                {...fadeUp}
+                transition={{ ...fadeUp.transition, delay: 0.02 * i }}
+                className="group flex flex-col items-center justify-center p-8 transition hover:opacity-80"
+              >
+                <div className="flex h-16 items-center justify-center">
+                  <img
+                    src={partner.logo}
+                    alt={`${partner.name} logo`}
+                    className="max-h-12 w-auto object-contain opacity-80 transition group-hover:opacity-100"
+                    loading="lazy"
+                  />
+                </div>
+                <div className="mt-4 text-center text-sm font-medium text-black/80 transition group-hover:text-black">
+                  {partner.name}
+                </div>
+              </motion.a>
+            ))}
+          </div>
         </div>
 
-        <div className="mt-14 border border-black/10 p-8">
-          <div className="text-sm font-medium text-black">Become a partner</div>
+        <div className="mt-14 p-8">
+          <div className="text-lg font-semibold text-black">Become a Member</div>
           <p className="mt-2 max-w-2xl text-sm text-black/60">
             If you represent a creator community, cultural institution, newsroom,
             policy body, or technology organization working on ethical Creative AI,
             we’d love to explore collaboration.
           </p>
-          <div className="mt-4">
-            <Button className="rounded-none bg-black text-white hover:bg-black/90">
-              Contact partnership team
-            </Button>
+          <div className="mt-6">
+            <a
+              href="https://github.com/creative-origin"
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center justify-center rounded-none bg-black px-6 py-2 text-sm text-white transition hover:bg-black/90 focus:outline-none"
+            >
+              Join the Alliance
+            </a>
           </div>
         </div>
       </div>
