@@ -3,6 +3,12 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import logoSideWhite from "@/assets/logo-side-white.png";
 import logoSideBlack from "@/assets/logo-side-black.jpg";
+import sxswLondonLogo from "@/assets/sxsw-london-logo.webp";
+import shapingTheFuture from "@/assets/shaping-the-future.webp";
+import pyroimage from "@/assets/pyroimage.webp";
+import creatorPlaybook from "@/assets/creator-playbook.webp";
+import twoDayConference from "@/assets/Two-day-conference.webp";
+import creativeEconomy from "@/assets/creative-economy.webp";
 import allfeatLogo from "@/assets/allfeat.png";
 import clickLogo from "@/assets/click.png";
 import dacsLogo from "@/assets/dacs.png";
@@ -107,9 +113,9 @@ const EVENTS = [
     location: "Flare Taipei",
     excerpt:
       "A RightsCon side event exploring authenticated digital content, accountability, and new models for trust in the AI era.",
-    image:
-      "https://images.unsplash.com/photo-1526378722484-bd91ca387e72?q=80&w=1200&auto=format&fit=crop",
+    image: shapingTheFuture,
     format: "In-person",
+    link: "https://link.numbersprotocol.io/RightsCon2025",
   },
   {
     dateBadge: "FEB 14–19",
@@ -118,9 +124,9 @@ const EVENTS = [
     location: "City venue (TBA)",
     excerpt:
       "A showcase of photography and responsible innovation, highlighting how provenance and ethical tooling can protect creators and audiences.",
-    image:
-      "https://images.unsplash.com/photo-1518998053901-5348d3961a04?q=80&w=1200&auto=format&fit=crop",
+    image: pyroimage,
     format: "Exhibition",
+    link: "https://www.thenewslens.com/article/248600",
   },
   {
     dateBadge: "NOV 21",
@@ -130,9 +136,9 @@ const EVENTS = [
     location: "Global",
     excerpt:
       "A practical workshop on control, licensing, and new revenue patterns for creators navigating AI-enabled distribution.",
-    image:
-      "https://images.unsplash.com/photo-1557683316-973673baf926?q=80&w=1200&auto=format&fit=crop",
+    image: creatorPlaybook,
     format: "Online",
+    link: "https://www.eventbrite.com/e/the-creators-playbook-mastering-monetization-ownership-in-digital-age-tickets-1070270350429",
   },
   {
     dateBadge: "NOV 20–21",
@@ -141,9 +147,9 @@ const EVENTS = [
     location: "Manchester, United Kingdom",
     excerpt:
       "A hybrid conference exploring digital collections, innovation, and the future of cultural infrastructure.",
-    image:
-      "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=1200&auto=format&fit=crop",
+    image: twoDayConference,
     format: "Hybrid",
+    link: "https://www.nationalcollection.org.uk/events/conference/towards-national-collection-two-day-conference-2024",
   },
   {
     dateBadge: "OCT 03",
@@ -152,9 +158,9 @@ const EVENTS = [
     location: "Tate Modern",
     excerpt:
       "An evening conversation with leading thinkers on the societal, economic, and artistic implications of generative AI.",
-    image:
-      "https://images.unsplash.com/photo-1497032205916-ac775f0649ae?q=80&w=1200&auto=format&fit=crop",
+    image: creativeEconomy,
     format: "In-person",
+    link: "https://www.tate.org.uk/whats-on/tate-modern/ea-festival-x-corner-conversations/impact-of-ai",
   },
   {
     dateBadge: "JUN 25",
@@ -163,9 +169,9 @@ const EVENTS = [
     location: "London, United Kingdom",
     excerpt:
       "A new chapter of the SXSW experience, covering AI, society, climate, and culture with global innovators.",
-    image:
-      "https://images.unsplash.com/photo-1515165562835-c4c053c9d8b6?q=80&w=1200&auto=format&fit=crop",
+    image: sxswLondonLogo,
     format: "Festival",
+    link: "https://www.sxswlondon.com/",
   },
 ];
 
@@ -889,9 +895,14 @@ function EventRow({ e, flip = false }: { e: any; flip?: boolean }) {
           {e.excerpt}
         </p>
         <div className="mt-6">
-          <Button className="rounded-none bg-black text-white hover:bg-black/90">
+          <a
+            href={e.link}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center justify-center rounded-none bg-black px-4 py-2 text-sm text-white transition hover:bg-black/90"
+          >
             View Event <ArrowRight className="ml-1.5 h-4 w-4" />
-          </Button>
+          </a>
         </div>
       </div>
     </div>
