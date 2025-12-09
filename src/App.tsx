@@ -191,14 +191,13 @@ const PARTNER_PLACEHOLDERS = [
   "Academic Centers",
 ];
 
+const HERO_CAPTURE_NID = "bafybeib63x3bcpzq6p2wclcbz2uzocfy4gkrdarvcufc6gnouylaqrk34a";
+
 const HERO_CAPTURE_ASSET = {
-  nid: "bafybeib63x3bcpzq6p2wclcbz2uzocfy4gkrdarvcufc6gnouylaqrk34a",
-  imageUrl:
-    "https://ipfs-pin.numbersprotocol.io/ipfs/bafybeib63x3bcpzq6p2wclcbz2uzocfy4gkrdarvcufc6gnouylaqrk34a",
-  assetUrl:
-    "https://asset.captureapp.xyz/bafybeib63x3bcpzq6p2wclcbz2uzocfy4gkrdarvcufc6gnouylaqrk34a",
-  actionButtonUrl:
-    "https://dashboard.captureapp.xyz/showcase/bafybeib63x3bcpzq6p2wclcbz2uzocfy4gkrdarvcufc6gnouylaqrk34a",
+  nid: HERO_CAPTURE_NID,
+  imageUrl: `https://ipfs-pin.numbersprotocol.io/ipfs/${HERO_CAPTURE_NID}`,
+  assetUrl: `https://asset.captureapp.xyz/${HERO_CAPTURE_NID}`,
+  actionButtonUrl: `https://dashboard.captureapp.xyz/showcase/${HERO_CAPTURE_NID}`,
   engagementImage:
     "https://static-cdn.numbersprotocol.io/capture-eye/capture-ad.png",
   engagementLink: "https://captureapp.xyz",
@@ -210,6 +209,62 @@ const fadeUp = {
   viewport: { once: true, margin: "-80px" },
   transition: { duration: 0.5, ease: "easeOut" },
 };
+
+const CAPTURE_MODAL_STYLE = `
+  .modal-container {
+    background: linear-gradient(180deg, #ffffff 0%, #f1f5ff 100%);
+  }
+`;
+
+function useCaptureEyeModalTheme() {
+  useEffect(() => {
+    if (typeof window === "undefined" || typeof MutationObserver === "undefined") {
+      return;
+    }
+
+    const applyStyle = (modalEl: Element) => {
+      const host = modalEl as HTMLElement & { dataset: DOMStringMap };
+      if (host.dataset.captureTheme === "applied") return;
+      const shadow = host.shadowRoot;
+      if (!shadow) return;
+      const sheetTarget = shadow as ShadowRoot & { adoptedStyleSheets?: CSSStyleSheet[] };
+
+      if (
+        typeof CSSStyleSheet !== "undefined" &&
+        Array.isArray(sheetTarget.adoptedStyleSheets)
+      ) {
+        const sheet = new CSSStyleSheet();
+        sheet.replaceSync(CAPTURE_MODAL_STYLE);
+        sheetTarget.adoptedStyleSheets = [...sheetTarget.adoptedStyleSheets, sheet];
+      } else {
+        const styleTag = document.createElement("style");
+        styleTag.textContent = CAPTURE_MODAL_STYLE;
+        shadow.appendChild(styleTag);
+      }
+
+      host.dataset.captureTheme = "applied";
+    };
+
+    const observer = new MutationObserver((mutations) => {
+      mutations.forEach((mutation) => {
+        mutation.addedNodes.forEach((node) => {
+          if (
+            node.nodeType === Node.ELEMENT_NODE &&
+            (node as Element).tagName.toLowerCase() === "capture-eye-modal"
+          ) {
+            applyStyle(node as Element);
+          }
+        });
+      });
+    });
+
+    observer.observe(document.body, { childList: true, subtree: true });
+
+    document.querySelectorAll("capture-eye-modal").forEach((modal) => applyStyle(modal));
+
+    return () => observer.disconnect();
+  }, []);
+}
 
 // ------------------------------
 // Hash Router
@@ -435,15 +490,16 @@ function Hero({ onApply }: { onApply: () => void }) {
         >
           <div className="aspect-[4/3] w-full overflow-hidden rounded-none border border-white/10 bg-white/5">
             <capture-eye
-              className="block"
               nid={HERO_CAPTURE_ASSET.nid}
               position="top left"
-              visibility="hover"
-              layout="curated"
-              cz-title="Produced for"
-              heading-source="abstract"
-              action-button-text="View provenance"
-              action-button-link={HERO_CAPTURE_ASSET.actionButtonUrl}
+              visibility="always"
+              layout="original"
+              color="#377dde"
+              cz-title="PRODUCED BY"
+              heading-source="headline"
+              cr-pin="on"
+              action-button-text="VIEW MORE"
+              action-button-link={HERO_CAPTURE_ASSET.assetUrl}
               eng-img={HERO_CAPTURE_ASSET.engagementImage}
               eng-link={HERO_CAPTURE_ASSET.engagementLink}
             >
@@ -901,6 +957,7 @@ function HomePage({
 // ------------------------------
 
 export default function App() {
+  useCaptureEyeModalTheme();
   const { route, navigate } = useHashRoute();
   const [applyOpen, setApplyOpen] = useState(false);
 
