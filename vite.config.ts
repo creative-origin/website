@@ -5,7 +5,7 @@ import path from "path";
 // IMPORTANT:
 // Replace this with your actual GitHub repo name
 // Example: "creative-origin-site"
-const repoName = "REPLACE_WITH_YOUR_REPO_NAME";
+const repoName = "creative-origin/website";
 
 export default defineConfig({
   plugins: [react()],
