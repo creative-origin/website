@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Creative Origin icon">
+  <defs>
+    <linearGradient id="coGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#020202" />
+      <stop offset="100%" stop-color="#9a9a9a" />
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="12" fill="#ffffff" />
+  <circle cx="32" cy="32" r="22" fill="url(#coGrad)" />
+  <path d="M27 22c-4.5 0-8 3.9-8 10s3.6 10 8.4 10c2.2 0 4-0.7 5.5-2.1l-2.3-2.3c-0.8 0.8-1.8 1.2-3.1 1.2-2.6 0-4.6-2.4-4.6-6.8 0-4.3 2.1-6.7 4.6-6.7 1.1 0 2.1 0.3 2.8 1l2.4-2.5C31 22.6 29.2 22 27 22zm12.6 0c-2.5 0-4.4 0.8-5.9 2.4-1.5 1.7-2.3 4-2.3 6.7 0 6.3 3.8 10.6 9.4 10.6 2.4 0 4.4-0.8 5.9-2.4s2.3-4 2.3-6.8c0-6.3-3.8-10.5-9.4-10.5zm0 4c2.6 0 4.3 2.3 4.3 6.5 0 4.3-1.7 6.7-4.3 6.7s-4.3-2.4-4.3-6.6c0-4.3 1.7-6.6 4.3-6.6z" fill="#ffffff" />
+</svg>
