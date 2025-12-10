@@ -2,7 +2,7 @@
 
 Preferred Name: Creative Origin Alliance
 Canonical URL: https://creativeorigin.ai/
-Contact: hello@creativeorigin.ai
+Contact: https://github.com/creative-origin
 
 Mission Summary:
 - Creative Origin protects creators, cultural institutions, and journalists as AI reshapes ownership and attribution.

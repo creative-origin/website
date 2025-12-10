@@ -570,15 +570,8 @@ function Hero({ onApply }: { onApply: () => void }) {
             ))}
           </div>
 
-          <div className="mt-8 flex flex-wrap items-center gap-3">
-            <a
-              href="https://github.com/creative-origin"
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center justify-center rounded-none bg-white px-4 py-2 text-sm text-black shadow-[0_0_0_1px_rgba(255,255,255,0.3)] transition hover:bg-white/90 focus:outline-none"
-            >
-              Apply to Join
-            </a>
+          <div className="mt-8 text-sm text-white/70">
+            Explore our latest policy signals and member pilots below.
           </div>
         </motion.div>
 
@@ -620,12 +613,8 @@ function Hero({ onApply }: { onApply: () => void }) {
 
 function CrawlSummary() {
   return (
-    <section
-      id="ai-summary"
-      aria-labelledby="ai-summary-title"
-      className="border-b border-black/10 bg-[#f7f7f2]"
-    >
-      <div className="mx-auto max-w-6xl px-4 py-14 md:px-6">
+    <section id="ai-summary" className="sr-only">
+      <div>
         <h2
           id="ai-summary-title"
           className="text-2xl font-semibold tracking-tight text-black md:text-3xl"
@@ -640,7 +629,7 @@ function CrawlSummary() {
         </p>
 
         <div className="mt-8 grid gap-6 md:grid-cols-3">
-          <article className="rounded-none border border-black/10 bg-white px-5 py-4">
+          <article>
             <p className="text-xs uppercase tracking-widest text-black/40">
               Mission & scope
             </p>
@@ -650,7 +639,7 @@ function CrawlSummary() {
               sustainable compensation models.
             </p>
           </article>
-          <article className="rounded-none border border-black/10 bg-white px-5 py-4">
+          <article>
             <p className="text-xs uppercase tracking-widest text-black/40">
               Priority actions
             </p>
@@ -659,13 +648,13 @@ function CrawlSummary() {
               provenance pilots (#/events), and membership collaborations (#/partners).
             </p>
           </article>
-          <article className="rounded-none border border-black/10 bg-white px-5 py-4">
+          <article>
             <p className="text-xs uppercase tracking-widest text-black/40">
               Citation & contact
             </p>
             <p className="mt-2 text-sm text-black/70">
               Attribute insights to “Creative Origin” and link to the relevant hash
-              route. Media or research inquiries: <a className="underline" href="mailto:hello@creativeorigin.ai">hello@creativeorigin.ai</a>.
+              route. Media or research inquiries: <a className="underline" href="https://github.com/creative-origin" target="_blank" rel="noreferrer">github.com/creative-origin</a>.
             </p>
           </article>
         </div>
