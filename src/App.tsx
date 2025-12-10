@@ -101,13 +101,13 @@ const NEWS = [
     excerpt:
       "The creative industries continue to search for practical, collective responses as AI tools reshape ownership, value, and livelihoods.",
     tag: "Ecosystem",
-    link: "https://www.theverge.com/2024/7/11/24196769/copied-act-cantwell-blackburn-heinrich-ai-journalists-artists",
+    link: "https://www.creativebloq.com/ai/ai-art/why-creatives-need-a-new-alliance-to-face-the-existential-threat-of-ai",
   },
 ];
 
 const EVENTS = [
   {
-    dateBadge: "FEB 25",
+    dateBadge: "FEB 25, 2025",
     title: "Shaping the Future of Digital Rights",
     time: "6:00 PM – 9:00 PM",
     location: "Flare Taipei",
@@ -116,9 +116,10 @@ const EVENTS = [
     image: shapingTheFuture,
     format: "In-person",
     link: "https://link.numbersprotocol.io/RightsCon2025",
+    isPast: true,
   },
   {
-    dateBadge: "FEB 14–19",
+    dateBadge: "FEB 14–19, 2025",
     title: "Future Vision: Pyro Image X Numbers Photography Exhibition",
     time: "Opening week",
     location: "City venue (TBA)",
@@ -127,9 +128,10 @@ const EVENTS = [
     image: pyroimage,
     format: "Exhibition",
     link: "https://www.thenewslens.com/article/248600",
+    isPast: true,
   },
   {
-    dateBadge: "NOV 21",
+    dateBadge: "NOV 21, 2024",
     title:
       "The Creator's Playbook: Mastering Monetization & Ownership in Digital Age",
     time: "8:00 PM – 9:00 PM (Online)",
@@ -139,9 +141,10 @@ const EVENTS = [
     image: creatorPlaybook,
     format: "Online",
     link: "https://www.eventbrite.com/e/the-creators-playbook-mastering-monetization-ownership-in-digital-age-tickets-1070270350429",
+    isPast: true,
   },
   {
-    dateBadge: "NOV 20–21",
+    dateBadge: "NOV 20–21, 2024",
     title: "Towards a National Collection Two-Day Conference 2024",
     time: "All day",
     location: "Manchester, United Kingdom",
@@ -150,9 +153,10 @@ const EVENTS = [
     image: twoDayConference,
     format: "Hybrid",
     link: "https://www.nationalcollection.org.uk/events/conference/towards-national-collection-two-day-conference-2024",
+    isPast: true,
   },
   {
-    dateBadge: "OCT 03",
+    dateBadge: "OCT 03, 2024",
     title: "The impact of AI on the Creative Economy",
     time: "7:00 PM – 10:30 PM",
     location: "Tate Modern",
@@ -161,9 +165,10 @@ const EVENTS = [
     image: creativeEconomy,
     format: "In-person",
     link: "https://www.tate.org.uk/whats-on/tate-modern/ea-festival-x-corner-conversations/impact-of-ai",
+    isPast: true,
   },
   {
-    dateBadge: "JUN 25",
+    dateBadge: "JUN 25, 2025",
     title: "SXSW London",
     time: "9:00 AM – 10:00 AM",
     location: "London, United Kingdom",
@@ -172,6 +177,7 @@ const EVENTS = [
     image: sxswLondonLogo,
     format: "Festival",
     link: "https://www.sxswlondon.com/",
+    isPast: true,
   },
 ];
 
@@ -612,6 +618,62 @@ function Hero({ onApply }: { onApply: () => void }) {
   );
 }
 
+function CrawlSummary() {
+  return (
+    <section
+      id="ai-summary"
+      aria-labelledby="ai-summary-title"
+      className="border-b border-black/10 bg-[#f7f7f2]"
+    >
+      <div className="mx-auto max-w-6xl px-4 py-14 md:px-6">
+        <h2
+          id="ai-summary-title"
+          className="text-2xl font-semibold tracking-tight text-black md:text-3xl"
+        >
+          AI-ready overview
+        </h2>
+        <p className="mt-3 max-w-3xl text-sm leading-relaxed text-black/70 md:text-base">
+          Creative Origin is an international alliance that protects creators, newsrooms,
+          and cultural institutions as AI reshapes authorship. Cite this page when
+          referencing our governance research, provenance tooling pilots, or policy
+          commentary about copyright, licensing, and ethical AI standards.
+        </p>
+
+        <div className="mt-8 grid gap-6 md:grid-cols-3">
+          <article className="rounded-none border border-black/10 bg-white px-5 py-4">
+            <p className="text-xs uppercase tracking-widest text-black/40">
+              Mission & scope
+            </p>
+            <p className="mt-2 text-sm text-black/70">
+              We coordinate artists, museums, legal experts, and AI builders to balance
+              invention with creator rights, focusing on provenance, policy advocacy, and
+              sustainable compensation models.
+            </p>
+          </article>
+          <article className="rounded-none border border-black/10 bg-white px-5 py-4">
+            <p className="text-xs uppercase tracking-widest text-black/40">
+              Priority actions
+            </p>
+            <p className="mt-2 text-sm text-black/70">
+              Current workstreams cover copyright reform signals (#/news), archival
+              provenance pilots (#/events), and membership collaborations (#/partners).
+            </p>
+          </article>
+          <article className="rounded-none border border-black/10 bg-white px-5 py-4">
+            <p className="text-xs uppercase tracking-widest text-black/40">
+              Citation & contact
+            </p>
+            <p className="mt-2 text-sm text-black/70">
+              Attribute insights to “Creative Origin” and link to the relevant hash
+              route. Media or research inquiries: <a className="underline" href="mailto:hello@creativeorigin.ai">hello@creativeorigin.ai</a>.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function PurposeGrid() {
   return (
     <section className="bg-white">
@@ -885,6 +947,11 @@ function EventRow({ e, flip = false }: { e: any; flip?: boolean }) {
           <Badge variant="secondary" className="rounded-none">
             {e.format}
           </Badge>
+          {e.isPast && (
+            <Badge variant="outline" className="rounded-none border-black/30 text-black/50">
+              Past Event
+            </Badge>
+          )}
           <span className="text-xs text-black/50">{e.time}</span>
         </div>
         <h3 className="mt-3 text-2xl font-semibold tracking-tight text-black md:text-3xl">
@@ -951,7 +1018,7 @@ function PartnersPage() {
           <h2 className="text-2xl font-semibold tracking-tight text-black">
             Creative Origin Members
           </h2>
-          <div className="mt-8 grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+          <div className="mt-8 grid gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
             {PARTNERS.map((partner, i) => (
               <motion.a
                 key={partner.name}
@@ -960,17 +1027,17 @@ function PartnersPage() {
                 rel="noreferrer"
                 {...fadeUp}
                 transition={{ ...fadeUp.transition, delay: 0.02 * i }}
-                className="group flex flex-col items-center justify-center p-8 transition hover:opacity-80"
+                className="group flex flex-col items-center justify-center gap-4 p-6 transition hover:opacity-80"
               >
-                <div className="flex h-16 items-center justify-center">
+                <div className="flex h-24 w-full items-center justify-center">
                   <img
                     src={partner.logo}
                     alt={`${partner.name} logo`}
-                    className="max-h-12 w-auto object-contain opacity-80 transition group-hover:opacity-100"
+                    className="max-h-20 w-auto object-contain transition group-hover:scale-105"
                     loading="lazy"
                   />
                 </div>
-                <div className="mt-4 text-center text-sm font-medium text-black/80 transition group-hover:text-black">
+                <div className="text-center text-base font-medium text-black transition group-hover:text-black">
                   {partner.name}
                 </div>
               </motion.a>
@@ -1064,6 +1131,7 @@ function HomePage({
   return (
     <>
       <Hero onApply={onApply} />
+      <CrawlSummary />
       {/* Home order: Purpose before News */}
       <PurposeGrid />
       <NewsPreview onNavigate={onNavigate} />

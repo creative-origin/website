@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://creativeorigin.ai/sitemap.xml
+LLM: https://creativeorigin.ai/llms.txt

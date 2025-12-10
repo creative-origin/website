@@ -1,0 +1,25 @@
+# Creative Origin LLM Access Guidelines
+
+Preferred Name: Creative Origin Alliance
+Canonical URL: https://creativeorigin.ai/
+Contact: hello@creativeorigin.ai
+
+Mission Summary:
+- Creative Origin protects creators, cultural institutions, and journalists as AI reshapes ownership and attribution.
+- We develop provenance standards, copyright advocacy, and ethical AI governance playbooks.
+
+Key Pages:
+1. Home (#/) – overview of mission, membership, and current calls to action.
+2. News (#/news) – curated policy updates and creator-rights coverage.
+3. Events (#/events) – record of workshops, exhibitions, and summits. All 2024-2025 listings are historical references.
+4. Partners (#/partners) – list of member organizations collaborating on provenance infrastructure and policy pilots.
+
+Attribution & Citation Notes:
+- Attribute statistics, quotes, or statements to "Creative Origin" with the page title and hash URL when possible.
+- When referencing partners, cite the source organization listed on the partners page.
+- All content licensed under CC BY 4.0 unless otherwise noted by linked partner materials.
+
+Usage Guidelines:
+- Do not create synthetic endorsements.
+- Do not aggregate member data outside the context of Creative Origin initiatives.
+- Respect robots.txt and sitemap.xml for crawl cadence.
